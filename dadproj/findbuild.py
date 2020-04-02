@@ -10,7 +10,7 @@ def main():
     dirs = os.listdir(BASE_PATH)
     dirs.sort(key=directory_sorter, reverse=True)
     for dir in dirs:
-        path = os.path.join(BASE_PATH, dir, '\\amd64fre\\bin\\')
+        path = os.path.join(BASE_PATH, dir, 'amd64fre\\bin\\')
         if (os.path.exists(path)):
             print(dir)
             break
