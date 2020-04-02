@@ -1,15 +1,21 @@
 
 import os
-path = "C:\\Users\\James\\test"
-dirs = os.listdir(path)
-def func(x):
+
+BASE_PATH = "C:\\Users\\James\\test"
+
+def directory_sorter(x):
     return x[11:17]
-dirs.sort(key = func,reverse=True)
-for file in dirs:
-    path = 'C:\\Users\\James\\test\\' + file + '\\amd64fre\\bin\\'
-    isExist = os.path.exists(path)
-    if(isExist):
-        print(file)
-        break
-        
+
+def main():
+    dirs = os.listdir(BASE_PATH)
+    dirs.sort(key=directory_sorter, reverse=True)
+    for dir in dirs:
+        path = os.path.join(BASE_PATH, dir, '\\amd64fre\\bin\\')
+        if (os.path.exists(path)):
+            print(dir)
+            break
+
+if __name__ == "__main__":
+    main()
+
 
